@@ -32,3 +32,5 @@
 * [webuploader C# MVC版](http://blog.sina.com.cn/s/blog_15442fd010102w44e.html)
 * [MVC中使用WebUploader进行图片预览上传以及编辑](https://www.cnblogs.com/cemaster/p/5604253.html)
 * [Asp.Net Mvc 使用WebUploader 多图片上传](https://www.cnblogs.com/ismars/p/4176912.html)
+
+##### 6.[C#实现SQL数据库备份与恢复](https://blog.csdn.net/andrewniu/article/details/79466306)

@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>还原数据库</title>
+    <title>备份还原数据库</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/webuploader/0.1.5/webuploader.css" />
     <style>
         * {
@@ -48,17 +48,18 @@
         }
 
         .btn {
-            display: inline-block;
+            display:inline-block;
             text-decoration: none;
             color: #fff;
             background-color: #0094ff;
             padding: 10px 15px;
             border-radius: 3px;
+            margin-right:50px;
         }
 
-            .btn:hover {
-                opacity: 0.9;
-            }
+        .btn:hover {
+            opacity: 0.9;
+        }
 
         .icofile {
             display: none;
@@ -110,11 +111,12 @@
                 <div class="tips">
                     说明：不上传备份文件，将还原默认的数据库备份文件
                 </div>
-                <input type="text" placeholder="还原后数据库名称" id="name" /><br />
+                <input type="text" placeholder="待备份或还原后数据库名称" id="name" /><br />
                 <input type="text" placeholder="数据库账户，可不填写" id="account" /><br />
                 <input type="password" placeholder="数据库密码，可不填写" id="pwd" /><br />
-                <a href="javascript:;" id="restore" class="btn">一键还原</a><br />
-                <p class="tip">还原时间与文件大小成正比，请耐心等待.....</p>
+                <a href="javascript:;" id="backup" class="btn">一键备份</a>
+                <a href="javascript:;" id="restore" class="btn" >一键还原</a>
+                <p class="tip">备份/还原时间与文件大小成正比，请耐心等待.....</p>
             </td>
         </tr>
     </table>
@@ -199,6 +201,29 @@
                 }
             });
 
+            //备份数据库文件
+            $("#backup").click(function () {
+                var valid = true;
+                if ($("#name").val() === "") {
+                    valid = false;
+                    return false;
+                }
+
+                if (valid) {
+                    $(this).hide();
+                    $(".tip").show();
+                    $.post("/Home/Backup",
+                        {
+                            name: $("#name").val(),
+                            account: $("#account").val(),
+                            pwd: $("#pwd").val()
+                        },
+                        function (data) {
+                            alert(data.message);
+                            window.location.reload();
+                        });
+                }
+            });
 
             //还原数据库文件
             $("#restore").click(function () {
@@ -220,7 +245,7 @@
                             isRestoreDefault: uploader.getFiles().length === 0
                         },
                         function (data) {
-                            alert(data.msg);
+                            alert(data.message);
                             window.location.reload();
                         });
                 }
