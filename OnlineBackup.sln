@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineBackup", "OnlineBackup\OnlineBackup.csproj", "{C0E8E780-5D2F-46EF-B96F-376E15350105}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0E8E780-5D2F-46EF-B96F-376E15350105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E8E780-5D2F-46EF-B96F-376E15350105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E8E780-5D2F-46EF-B96F-376E15350105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E8E780-5D2F-46EF-B96F-376E15350105}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62482C6A-6BDB-40D0-AD47-27A377C5906C}
+	EndGlobalSection
+EndGlobal
